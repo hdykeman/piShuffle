@@ -5,10 +5,11 @@
 
 import os
 import random
-import repeats
+from piShuffle import repeats
+
 
 def getTrack():
-   return os.listdir('.')[random.randint(0, len(os.listdir('.')))-1]
+   return os.listdir('..')[random.randint(0, len(os.listdir('..'))) - 1]
 
 def play(track):
    os.system('omxplayer -b -o hdmi "' + track + '"')
