@@ -23,7 +23,7 @@ def checkRepeats(track, repeatList):
 
 
 if __name__ == '__main__':
-   os.chdir('/home/pi/piShuffle/music')
+   os.chdir('~/piShuffle/music')
    repeatList = repeats.repeatList(10)
    nextTrack = getTrack()
    play(nextTrack)
