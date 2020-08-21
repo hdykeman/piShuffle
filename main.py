@@ -9,7 +9,12 @@ import repeats
 
 
 def getTrack():
-   return os.listdir('')[random.randint(0, len(os.listdir(''))) - 1]
+   tracks = os.listdir('.')
+   random.shuffle(tracks)
+   index = 0
+   while not checkRepeats(tracks[index], repeatList.data):
+      index += 1
+   return tracks[index]
 
 def play(track):
    os.system('omxplayer -b -o hdmi "' + track + '"')
@@ -17,7 +22,7 @@ def play(track):
 def checkRepeats(track, repeatList):
    for repeat in repeatList:
       if repeat.find(track[5:-6]) > 0:
-         #print(track + ' ' + repeat)
+         print(track + ' ' + repeat)
          return False
    return True
 
